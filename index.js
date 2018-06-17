@@ -13,8 +13,8 @@ mongoose.connect(config.DATABASE)
 mongoose.Promise = global.Promise
 
 // app.use(express.limit('50mb'));
-// app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+// app.use(bodyParser.json())
 
 app.use('/api', routes)
 
