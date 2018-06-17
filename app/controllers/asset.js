@@ -1,9 +1,8 @@
 var aws = require('aws-sdk')
-var contentDisposition = require('content-disposition')
 var request = require('request')
 var { Asset } = require('../models/asset')
 var upload = require('../middleware/multer-S3').upload;
-var uploader = upload.array("asset", 32)
+var uploader = upload.array("asset", 1)
 
 var config
 if (process.env.NODE_ENV == "prod") config = require('../../config-prod')
