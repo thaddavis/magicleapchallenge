@@ -8,7 +8,11 @@ else config = require('../../config-dev')
 
 var p = console.log
 
-function register(req, res, next) {  
+function register(req, res, next) {
+
+		p('register')
+		p(req.body)
+
     if (!req.body.username) { return res.status(400).send('`username` required\n') }
 		if (!req.body.password) { return res.status(400).send('`password` required\n') }
 		var user = new User({ username: req.body.username, password: req.body.password })
