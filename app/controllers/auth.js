@@ -10,8 +10,8 @@ var p = console.log
 
 function register(req, res, next) {
 
-		p('register')
-		p(req.body)
+		console.log('register')
+		console.log(req.body)
 
     if (!req.body.username) { return res.status(400).send('`username` required\n') }
 		if (!req.body.password) { return res.status(400).send('`password` required\n') }
