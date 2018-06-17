@@ -16,7 +16,7 @@ function register(req, res, next) {
     if (!req.body.username) { return res.status(400).send('`username` required\n') }
 		if (!req.body.password) { return res.status(400).send('`password` required\n') }
 		var user = new User({ username: req.body.username, password: req.body.password })
-		bcrypt.genSalt(config.SALT_FACTOR, function(err, salt) {
+		bcrypt.genSalt(parseInt(config.SALT_FACTOR), function(err, salt) {
 			if (err) { return next(err) }
 			bcrypt.hash(user.password, salt, function(err, hash) {
           if (err) { return next(err) }
